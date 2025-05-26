@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0l8sle2sir4k"]
+
+[ext_resource type="Texture2D" uid="uid://dh6lhbqfdaq1q" path="res://Sprites/SpaceBackground.png" id="1_5cjrv"]
+[ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/World.gd" id="1_j0p05"]
+[ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5nsto"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_j0p05")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+offset_right = 322.0
+offset_bottom = 640.0
+texture = ExtResource("1_5cjrv")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_5nsto")]
+position = Vector2(65, 89)
