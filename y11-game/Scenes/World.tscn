@@ -10,8 +10,8 @@ script = ExtResource("1_j0p05")
 [node name="Background" type="Node2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
-offset_right = 322.0
-offset_bottom = 640.0
+offset_right = 128.0
+offset_bottom = 128.0
 texture = ExtResource("1_5cjrv")
 stretch_mode = 1
 
