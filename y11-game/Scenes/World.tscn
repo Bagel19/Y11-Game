@@ -11,9 +11,15 @@ script = ExtResource("1_j0p05")
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
 offset_right = 128.0
-offset_bottom = 128.0
+offset_bottom = 130.0
 texture = ExtResource("1_5cjrv")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("3_5nsto")]
 position = Vector2(65, 89)
+
+[node name="EndofLevel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndofLevel"]
+
+[connection signal="body_entered" from="EndofLevel" to="." method="_on_endof_level_body_entered"]
