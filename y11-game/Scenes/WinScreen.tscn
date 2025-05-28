@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://322a1q3cgdim"]
+[gd_scene load_steps=3 format=3 uid="uid://c63x3boo8f027"]
 
-[ext_resource type="Script" uid="uid://djfi80dd7loof" path="res://Scripts/Settings.gd" id="1_4hxq3"]
-[ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="2_flfri"]
+[ext_resource type="Script" uid="uid://boyrvpldja21s" path="res://Scripts/Win Screen.gd" id="1_d8xbi"]
+[ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="2_82r0j"]
 
-[node name="Control" type="Control"]
+[node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_4hxq3")
+script = ExtResource("1_d8xbi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -36,21 +36,16 @@ layout_mode = 2
 size_flags_vertical = 8
 text = "Exit"
 
-[node name="Player" parent="." instance=ExtResource("2_flfri")]
+[node name="Player" parent="." instance=ExtResource("2_82r0j")]
 position = Vector2(156, 363)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 490.0
-offset_right = 322.0
-offset_bottom = 643.0
-text = "W or ↑ = Up
-A or ← = Left
-S or ↓ = Down
-D or → = Right
-Blue Gems = Reduce Time
-Red Gems = Immunity for 1 Second"
+offset_left = 3.0
+offset_top = 40.0
+offset_right = 323.0
+offset_bottom = 63.0
+text = "YOU WIN!!!"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

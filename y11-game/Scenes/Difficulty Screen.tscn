@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://douvqbbbqrpvn"]
+
+[ext_resource type="Script" uid="uid://wycgyvl4581i" path="res://Scripts/Difficulty Screen.gd" id="1_ufykx"]
+
+[node name="Difficulty Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ufykx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Easy Mode" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Easy Mode"
+
+[node name="Hard Mode" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Hard Mode"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_easy_mode_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_hard_mode_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
