@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3vtha5diwh6y"]
+
+[ext_resource type="Script" uid="uid://b1juy7w02v8ik" path="res://Scripts/Enemy.gd" id="1_m1htj"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_m1htj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Shoot Timer" type="Timer" parent="."]
+
+[node name="Rotator" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Shoot Timer" to="." method="_on_shoot_timer_timeout"]
