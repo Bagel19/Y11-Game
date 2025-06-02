@@ -14,11 +14,6 @@ config/name="Y11 Game"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[display]
-
-window/size/viewport_width=320
-window/size/viewport_height=640
-
 [input]
 
 Up={

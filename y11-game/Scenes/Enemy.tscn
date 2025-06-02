@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3vtha5diwh6y"]
+[gd_scene load_steps=3 format=3 uid="uid://c3vtha5diwh6y"]
 
 [ext_resource type="Script" uid="uid://b1juy7w02v8ik" path="res://Scripts/Enemy.gd" id="1_m1htj"]
+[ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="2_wovta"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_m1htj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
+texture = ExtResource("2_wovta")
 
 [node name="Shoot Timer" type="Timer" parent="."]
 

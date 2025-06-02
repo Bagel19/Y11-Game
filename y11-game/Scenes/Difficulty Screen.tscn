@@ -27,7 +27,7 @@ text = "Easy Mode"
 layout_mode = 2
 text = "Hard Mode"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_easy_mode_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_hard_mode_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
