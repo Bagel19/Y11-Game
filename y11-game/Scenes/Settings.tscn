@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://322a1q3cgdim"]
+[gd_scene load_steps=4 format=3 uid="uid://322a1q3cgdim"]
 
 [ext_resource type="Script" uid="uid://djfi80dd7loof" path="res://Scripts/Settings.gd" id="1_4hxq3"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="2_flfri"]
+[ext_resource type="PackedScene" uid="uid://c3vtha5diwh6y" path="res://Scenes/Enemy2_Hard.tscn" id="3_yrknh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,14 +38,14 @@ size_flags_vertical = 8
 text = "Exit"
 
 [node name="Player" parent="." instance=ExtResource("2_flfri")]
-position = Vector2(156, 363)
+position = Vector2(586, 368)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 490.0
-offset_right = 322.0
-offset_bottom = 643.0
+offset_left = 432.0
+offset_top = 495.0
+offset_right = 752.0
+offset_bottom = 648.0
 text = "W or ↑ = Up
 A or ← = Left
 S or ↓ = Down
@@ -52,5 +53,8 @@ D or → = Right
 Blue Gems = Reduce Time
 Red Gems = Immunity for 1 Second"
 horizontal_alignment = 1
+
+[node name="Enemy" parent="." instance=ExtResource("3_yrknh")]
+position = Vector2(579, 164)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
