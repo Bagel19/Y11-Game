@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=4 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Texture2D" uid="uid://dh6lhbqfdaq1q" path="res://Sprites/SpaceBackground.png" id="2_m6oth"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
-[ext_resource type="PackedScene" uid="uid://c3vtha5diwh6y" path="res://Scenes/Enemy2_Hard.tscn" id="4_m6oth"]
 
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
@@ -23,8 +22,5 @@ position = Vector2(65, 89)
 [node name="EndofLevel" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndofLevel"]
-
-[node name="Enemy" parent="." instance=ExtResource("4_m6oth")]
-position = Vector2(161, -421)
 
 [connection signal="body_entered" from="EndofLevel" to="." method="_on_endof_level_body_entered"]

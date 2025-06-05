@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djfi80dd7loof" path="res://Scripts/Settings.gd" id="1_4hxq3"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="2_flfri"]
-[ext_resource type="PackedScene" uid="uid://c3vtha5diwh6y" path="res://Scenes/Enemy2_Hard.tscn" id="3_yrknh"]
+[ext_resource type="PackedScene" uid="uid://m6g48ulgpy7t" path="res://Scenes/EasyEnemy.tscn" id="3_yrknh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -54,7 +54,7 @@ Blue Gems = Reduce Time
 Red Gems = Immunity for 1 Second"
 horizontal_alignment = 1
 
-[node name="Enemy" parent="." instance=ExtResource("3_yrknh")]
-position = Vector2(579, 164)
+[node name="EasyEnemy" parent="." instance=ExtResource("3_yrknh")]
+position = Vector2(580, 171)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvvpm3up36i6p"]
+[gd_scene load_steps=3 format=3 uid="uid://dda1ibr4ovexy"]
 
-[ext_resource type="Script" uid="uid://bihi632y8qujj" path="res://Scripts/Bullet.gd" id="1_vlxeq"]
+[ext_resource type="Script" uid="uid://cnk0ynbimx0jn" path="res://Scripts/Bullet.gd" id="1_14k46"]
 [ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="2_14k46"]
 
 [node name="Bullet" type="Node2D"]
-script = ExtResource("1_vlxeq")
+script = ExtResource("1_14k46")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_14k46")
 
-[node name="Kill Timer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="KillTimer" type="Timer" parent="."]
 autostart = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

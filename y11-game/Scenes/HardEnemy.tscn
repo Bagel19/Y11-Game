@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cniuyrsjnl7cx"]
+
+[ext_resource type="Script" uid="uid://c8y52qdanx7f6" path="res://Scripts/HardEnemy.gd" id="1_4xe6d"]
+[ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="1_25skc"]
+
+[node name="HardEnemy" type="Node2D"]
+script = ExtResource("1_4xe6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+texture = ExtResource("1_25skc")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotater" type="Node2D" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
