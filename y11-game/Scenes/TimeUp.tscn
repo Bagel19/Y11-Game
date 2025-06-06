@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4tsr40nqfbc1"]
+
+[ext_resource type="Script" uid="uid://nvuv1ks2id81" path="res://Scripts/TimeUp.gd" id="1_0b1kv"]
+[ext_resource type="Texture2D" uid="uid://mc6ayornr07i" path="res://Sprites/Powerrups.png" id="1_j03ut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b1kv"]
+atlas = ExtResource("1_j03ut")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5enov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b1kv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_adnic"]
+
+[node name="TimeUp" type="Area2D"]
+script = ExtResource("1_0b1kv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5enov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_adnic")
