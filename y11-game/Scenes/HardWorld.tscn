@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Texture2D" uid="uid://dh6lhbqfdaq1q" path="res://Sprites/SpaceBackground.png" id="2_m6oth"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
+[ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d24jh"]
 normal = Vector2(-0.999885, -0.0151498)
@@ -30,6 +31,9 @@ position = Vector2(24, 6)
 shape = SubResource("WorldBoundaryShape2D_d24jh")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
+position = Vector2(559, 329)
 
 [connection signal="body_entered" from="EndofLevel" to="." method="_on_endof_level_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
