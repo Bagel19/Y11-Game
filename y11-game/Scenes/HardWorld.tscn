@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Texture2D" uid="uid://dh6lhbqfdaq1q" path="res://Sprites/SpaceBackground.png" id="2_m6oth"]
