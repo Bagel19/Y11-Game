@@ -1,32 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq53or7jg7188"]
+[gd_scene load_steps=8 format=3 uid="uid://bq53or7jg7188"]
 
 [ext_resource type="Script" uid="uid://277w4qcc1me7" path="res://Scripts/Player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://jp27jtmhwmtp" path="res://Sprites/Main Ship - Base - Full health.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://do3v6yih2sd2t" path="res://Sprites/thumbnail_image.png" id="2_kyqiw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
-atlas = ExtResource("2_gntrk")
-region = Rect2(0, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(146, 0, 146, 262)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kne1u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(0, 0, 146, 262)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(292, 0, 146, 262)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn08x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kpjcp")
+"texture": SubResource("AtlasTexture_gntrk")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}],
+"loop": true,
+"name": &"Turning Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}],
+"loop": true,
+"name": &"Turning Right",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e80uo"]
-height = 26.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
+radius = 26.0
+height = 52.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_kne1u")
+position = Vector2(0, -1.00001)
+scale = Vector2(0.277397, 0.240458)
+sprite_frames = SubResource("SpriteFrames_nn08x")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource("CapsuleShape2D_e80uo")
+shape = SubResource("CapsuleShape2D_kyqiw")

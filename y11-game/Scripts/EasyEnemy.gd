@@ -26,17 +26,10 @@ func _process(delta: float) -> void:
 	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
 	rotator.rotation_degrees = fmod(new_rotation, 360)
 
-#func _on_shoot_timer_timeout() -> void:
+func _on_shoot_timer_timeout() -> void:
 	for s in rotator.get_children():
 		var bullet = bullet_scene.instantiate()
 		get_tree().root.add_child(bullet)
 		bullet.position = s.global_position
 		bullet.rotation = s.global_rotation
-	rotator.rotation_degrees = fmod(rotator.rotation_degrees + rotate_speed * delta, 360.0)
-
-func _on_shoot_timer_timeout() -> void:
-	for spawn_point in rotator.get_children():
-		var bullet := bullet_scene.instantiate()
-		bullet.global_position = spawn_point.get_global_position()
-		bullet.global_rotation = spawn_point.get_global_rotation()
-		get_tree().current_scene.add_child(bullet)
+	#rotator.rotation_degrees = fmod(rotator.rotation_degrees + rotate_speed * delta, 360.0)

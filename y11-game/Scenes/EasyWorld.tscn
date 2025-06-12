@@ -25,6 +25,6 @@ position = Vector2(65, 89)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndofLevel"]
 
 [node name="EasyEnemy" parent="." instance=ExtResource("4_yf3fs")]
-position = Vector2(573, 64)
+position = Vector2(560, 377)
 
 [connection signal="body_entered" from="EndofLevel" to="." method="_on_endof_level_body_entered"]

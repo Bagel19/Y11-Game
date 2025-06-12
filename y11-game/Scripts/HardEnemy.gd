@@ -1,5 +1,5 @@
 extends Node2D
-const bullet_scene = preload("res://Scenes/Bullet.tscn")
+var bullet_scene = preload("res://Scenes/Bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotator = $Rotator
 const rotate_speed = 50
@@ -7,7 +7,7 @@ const shooter_timer_wait_time = 0.2
 const spawn_point_count = 6
 const radius = 100
 
-func _ready() -> void:
+func _ready():
 	var step = TAU / spawn_point_count
 	for i in spawn_point_count:
 		var spawn_point := Node2D.new()
@@ -23,11 +23,13 @@ func _ready() -> void:
 	shoot_timer.start()
 
 func _process(delta: float) -> void:
-	rotator.rotation_degrees = fmod(rotator.rotation_degrees + rotate_speed * delta, 360.0)
+	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
+	rotator.rotation_degrees = fmod(new_rotation, 360)
 
 func _on_shoot_timer_timeout() -> void:
-	for spawn_point in rotator.get_children():
-		var bullet := bullet_scene.instantiate()
-		bullet.global_position = spawn_point.get_global_position()
-		bullet.global_rotation = spawn_point.get_global_rotation()
-		get_tree().current_scene.add_child(bullet)
+	for s in rotator.get_children():
+		var bullet = bullet_scene.instantiate()
+		get_tree().root.add_child(bullet)
+		bullet.position = s.global_position
+		bullet.rotation = s.global_rotation
+	#rotator.rotation_degrees = fmod(rotator.rotation_degrees + rotate_speed * delta, 360.0)
