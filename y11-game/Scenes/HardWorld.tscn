@@ -32,6 +32,10 @@ shape = SubResource("WorldBoundaryShape2D_d24jh")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
 position = Vector2(559, 329)
 

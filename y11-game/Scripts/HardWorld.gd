@@ -14,8 +14,8 @@ func _on_timer_timeout():
 		if minutes > 0:
 			minutes -= 1
 
-#$Label.text=String(minutes)+":"+String(seconds)
-#pass
+$Label.text=String(minutes)+":"+String(seconds)
+pass
 
 func Reset_Timer():
 	seconds=Dseconds
