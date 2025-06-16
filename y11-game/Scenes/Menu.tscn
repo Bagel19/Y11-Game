@@ -33,21 +33,27 @@ size_flags_vertical = 8
 
 [node name="Start" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6pedr")
 theme_override_font_sizes/font_size = 48
 text = "Start"
 
 [node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6pedr")
 theme_override_font_sizes/font_size = 48
 text = "Leave"
 
 [node name="Settings" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_6pedr")
 theme_override_font_sizes/font_size = 48
 text = "Settings"

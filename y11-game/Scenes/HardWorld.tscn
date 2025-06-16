@@ -1,43 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=5 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
-[ext_resource type="Texture2D" uid="uid://dh6lhbqfdaq1q" path="res://Sprites/SpaceBackground.png" id="2_m6oth"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="4_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d24jh"]
-normal = Vector2(-0.999885, -0.0151498)
-distance = -150.074
 
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
 
-[node name="Background" type="Node2D" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="Background"]
-offset_right = 128.0
-offset_bottom = 130.0
-texture = ExtResource("2_m6oth")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Player" parent="." instance=ExtResource("3_5ijq8")]
 position = Vector2(65, 89)
-
-[node name="EndofLevel" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndofLevel"]
-position = Vector2(24, 6)
-shape = SubResource("WorldBoundaryShape2D_d24jh")
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
 position = Vector2(559, 329)
 
-[connection signal="body_entered" from="EndofLevel" to="." method="_on_endof_level_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 91.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Pause" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_5ijq8")
+theme_override_font_sizes/font_size = 48
+text = "Pause"

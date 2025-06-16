@@ -53,7 +53,7 @@ script = ExtResource("1_kyqiw")
 position = Vector2(0, -1.00001)
 scale = Vector2(0.277397, 0.240458)
 sprite_frames = SubResource("SpriteFrames_nn08x")
-animation = &"Turning Left"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

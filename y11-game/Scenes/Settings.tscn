@@ -37,6 +37,8 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_w1nw0")
 theme_override_font_sizes/font_size = 48
 text = "Exit"
@@ -59,6 +61,6 @@ Red Gems = Immunity for 1 Second"
 horizontal_alignment = 1
 
 [node name="EasyEnemy" parent="." instance=ExtResource("3_yrknh")]
-position = Vector2(591, 198)
+position = Vector2(570, 198)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
