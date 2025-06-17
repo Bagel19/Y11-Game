@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://douvqbbbqrpvn"]
+[gd_scene load_steps=3 format=3 uid="uid://douvqbbbqrpvn"]
 
 [ext_resource type="Script" uid="uid://wycgyvl4581i" path="res://Scripts/Difficulty Screen.gd" id="1_ufykx"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="2_b53vi"]
 
 [node name="Difficulty Screen" type="Control"]
 layout_mode = 3
@@ -33,6 +34,8 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_b53vi")
+theme_override_font_sizes/font_size = 48
 text = "Easy Mode"
 
 [node name="Hard Mode" type="Button" parent="CanvasLayer/VBoxContainer"]
@@ -40,6 +43,8 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_b53vi")
+theme_override_font_sizes/font_size = 48
 text = "Hard Mode"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
 [ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="4_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
+[ext_resource type="PackedScene" uid="uid://b236xuwncvym" path="res://Scenes/Timer.tscn" id="5_5ijq8"]
 
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
@@ -38,3 +39,11 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_5ijq8")
 theme_override_font_sizes/font_size = 48
 text = "Pause"
+
+[node name="Timer" parent="." instance=ExtResource("5_5ijq8")]
+offset_left = 353.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 424.0
+
+[connection signal="pressed" from="VBoxContainer/Pause" to="." method="_on_pause_pressed"]

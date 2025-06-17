@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cd3384v0j2fcp" path="res://Scripts/Timer.gd" id="1_notwg"]
 
-[node name="Control" type="Control"]
+[node name="Timer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 799.0
