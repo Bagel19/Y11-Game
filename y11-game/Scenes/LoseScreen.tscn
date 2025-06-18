@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c63x3boo8f027"]
+[gd_scene load_steps=4 format=3 uid="uid://t445fohiqdpn"]
 
-[ext_resource type="Script" uid="uid://boyrvpldja21s" path="res://Scripts/Win Screen.gd" id="1_d8xbi"]
-[ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="2_82r0j"]
-[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="2_fy21p"]
+[ext_resource type="Script" uid="uid://boyrvpldja21s" path="res://Scripts/Win Screen.gd" id="1_5l33y"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="2_7yd7v"]
+[ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_l3frv"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_d8xbi")
+script = ExtResource("1_5l33y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -38,11 +38,11 @@ size_flags_vertical = 8
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_fy21p")
+theme_override_fonts/font = ExtResource("2_7yd7v")
 theme_override_font_sizes/font_size = 48
 text = "Exit"
 
-[node name="Player" parent="." instance=ExtResource("2_82r0j")]
+[node name="Player" parent="." instance=ExtResource("3_l3frv")]
 position = Vector2(156, 363)
 
 [node name="Label" type="Label" parent="."]
@@ -51,7 +51,7 @@ offset_left = 3.0
 offset_top = 40.0
 offset_right = 323.0
 offset_bottom = 63.0
-text = "YOU WIN!!!"
+text = "YOU LOSE!!!"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
