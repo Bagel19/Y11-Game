@@ -47,7 +47,7 @@ theme_override_fonts/font = ExtResource("2_b53vi")
 theme_override_font_sizes/font_size = 48
 text = "Hard Mode"
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_easy_mode_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_hard_mode_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
