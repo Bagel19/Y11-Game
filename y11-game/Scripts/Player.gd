@@ -17,5 +17,8 @@ func _ready():
 	progress_bar.value = health
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	health -= 1
-	progress_bar.value = health
+	if area.is_in_group("Projectiles"):
+		health -= 1
+		progress_bar.value = health
+		if health <= 0:
+			get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")

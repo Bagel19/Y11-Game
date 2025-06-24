@@ -54,6 +54,7 @@ bg_color = Color(1, 1, 0, 1)
 bg_color = Color(0.294118, 0, 0.509804, 1)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_kyqiw")
 metadata/_edit_vertical_guides_ = [457.0]
 
@@ -80,7 +81,7 @@ region_rect = Rect2(788, 1744, 335, 95)
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
 offset_left = 502.0
 offset_top = 13.0
-offset_right = 540.0
+offset_right = 719.0
 offset_bottom = 57.0
 theme_override_styles/background = SubResource("StyleBoxFlat_gntrk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dewec")
