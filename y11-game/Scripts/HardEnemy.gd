@@ -29,6 +29,8 @@ func _ready():
 		if minutes > 0:
 			minutes -= 1
 			seconds = 59
+			if Dminutes == 0 and Dseconds == 0:
+				get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
 
 func _process(delta: float) -> void:
 	var new_rotation = rotator.rotation_degrees + rotate_speed * delta
