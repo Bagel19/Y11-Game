@@ -1,8 +1,21 @@
 extends Node2D
 
-func _on_endof_level_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
+@export var POWERUP: PackedScene
+@export var spawn_bounds: Rect2
 
-func _on_pause_pressed() -> void:
-	pass # Replace with function body.
+func _ready():
+	randomize()
+
+func _on_Timer_timeout():
+	spawnHealth()
+
+func spawnHealth():
+	var chance = randi_range(0,1)
+	if chance == 0:
+		var powerup = POWERUP.instantiate()
+		var rand_x = randf_range(spawn_bounds.position.x, spawn_bounds.position.x + spawn_bounds.size.x)
+		var rand_y = randf_range(spawn_bounds.position.y, spawn_bounds.position.y + spawn_bounds.size.y)
+		powerup.global_position = Vector2(rand_x, rand_y)
+		get_tree().current_scene.add_child(powerup)
+	else:
+		pass

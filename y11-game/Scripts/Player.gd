@@ -24,3 +24,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		progress_bar.value = health
 		if health <= 0:
 			get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+	
+	if area.is_in_group("HealthUp"):
+		health +=1
+		area.queue_free()
+		if health > progress_bar.max_value:
+			health = progress_bar.max_value
+		progress_bar.value = health

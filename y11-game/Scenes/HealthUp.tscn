@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_f60t2"]
 radius = 11.0
 
-[node name="HealthUp" type="Area2D"]
+[node name="HealthUp" type="Area2D" groups=["HealthUp"]]
 script = ExtResource("1_at3t2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
