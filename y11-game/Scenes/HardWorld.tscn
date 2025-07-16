@@ -1,93 +1,43 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
+[ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="2_btnk4"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
-[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="4_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
-[ext_resource type="PackedScene" uid="uid://b236xuwncvym" path="res://Scenes/Timer.tscn" id="5_5ijq8"]
-[ext_resource type="PackedScene" uid="uid://co3rs734oi7kx" path="res://Scenes/Pause.tscn" id="6_1mf72"]
-[ext_resource type="PackedScene" uid="uid://b7rfsx1ja5mrk" path="res://Scenes/Killzone.tscn" id="7_cg65a"]
-[ext_resource type="Texture2D" uid="uid://csmupmb118rg3" path="res://Sprites/Untitled.png" id="8_8iycb"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8iycb"]
-distance = -648.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btnk4"]
-bg_color = Color(0.294118, 0, 0.509804, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slp56"]
-bg_color = Color(1, 1, 0, 1)
+[ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="8_8iycb"]
 
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_btnk4")
+
 [node name="Player" parent="." instance=ExtResource("3_5ijq8")]
-position = Vector2(65, 89)
+position = Vector2(22, 327)
 
 [node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
-position = Vector2(559, 329)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 91.0
-offset_bottom = 57.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="Pause" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 0.647059, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_5ijq8")
-theme_override_font_sizes/font_size = 48
-text = "Pause"
-
-[node name="Timer" parent="." instance=ExtResource("5_5ijq8")]
-offset_left = 353.0
-offset_top = 2.0
-offset_right = 1152.0
-offset_bottom = 424.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("6_1mf72")]
-
-[node name="Killzone" parent="." instance=ExtResource("7_cg65a")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("WorldBoundaryShape2D_8iycb")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
-position = Vector2(609, 36)
-scale = Vector2(0.7, 0.657895)
-texture = ExtResource("8_8iycb")
-region_enabled = true
-region_rect = Rect2(788, 1744, 335, 95)
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer2"]
-offset_left = 502.0
-offset_top = 13.0
-offset_right = 540.0
-offset_bottom = 57.0
-theme_override_styles/background = SubResource("StyleBoxFlat_btnk4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_slp56")
-show_percentage = false
+position = Vector2(536, 63)
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
-[connection signal="pressed" from="VBoxContainer/Pause" to="." method="_on_pause_pressed"]
+[node name="Packages" type="Node" parent="."]
+
+[node name="Package" parent="Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(319, 264)
+
+[node name="Package2" parent="Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(901, 551)
+
+[node name="Package3" parent="Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(882, 85)
+
+[node name="Package4" parent="Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(549, 609)
+
+[node name="Package5" parent="Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(28, 621)
+
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
