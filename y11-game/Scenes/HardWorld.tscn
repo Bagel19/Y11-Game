@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=7 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="2_btnk4"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
+[ext_resource type="PackedScene" uid="uid://b5q886u4y08g6" path="res://Scenes/Big SpaceShip.tscn" id="6_1mf72"]
 [ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="8_8iycb"]
 
 [node name="HardWorld" type="Node2D"]
@@ -14,7 +15,7 @@ unique_name_in_owner = true
 script = ExtResource("2_btnk4")
 
 [node name="Player" parent="." instance=ExtResource("3_5ijq8")]
-position = Vector2(22, 327)
+position = Vector2(27, 26)
 
 [node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
 position = Vector2(536, 63)
@@ -39,5 +40,13 @@ position = Vector2(549, 609)
 
 [node name="Package5" parent="Packages" instance=ExtResource("8_8iycb")]
 position = Vector2(28, 621)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 424.0
+offset_bottom = 93.0
+text = "Packages Needed to be Delivered: "
+
+[node name="Big SpaceShip" parent="." instance=ExtResource("6_1mf72")]
+position = Vector2(1085, 4)
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5q886u4y08g6"]
+
+[ext_resource type="Script" uid="uid://deble3gegho55" path="res://Scripts/Big SpaceShip.gd" id="1_duvfx"]
+[ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="1_o5gdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duvfx"]
+size = Vector2(121, 643)
+
+[node name="Big SpaceShip" type="Area2D"]
+script = ExtResource("1_duvfx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 328.5)
+scale = Vector2(1, 5.07031)
+texture = ExtResource("1_o5gdg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.5, 325.5)
+shape = SubResource("RectangleShape2D_duvfx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

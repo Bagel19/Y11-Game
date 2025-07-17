@@ -1,8 +1,8 @@
 extends Area2D
-
-@onready var game_manager: Node = %GameManager
-
+var score = 5
 
 func _on_body_entered(body: Node2D) -> void:
-	game_manager.add_point()
-	queue_free()
+	if body.name == "Player":  # You can use groups or check for the correct node
+		var main = get_tree().get_root().get_node("Main")  # Adjust path as needed
+		main.increase_count()
+		queue_free()  # Remove the collectable
