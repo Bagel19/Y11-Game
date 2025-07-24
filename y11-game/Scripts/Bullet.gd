@@ -1,9 +1,6 @@
-extends Node2D
-
+extends Area2D
+var DMG := 1
 @export var speed: float = 200.0 
-
-func _proccess(delta):
-	position += transform.x * speed * delta
 
 func _process(delta: float) -> void:
 	position += Vector2.RIGHT.rotated(rotation) * speed * delta
@@ -11,3 +8,9 @@ func _process(delta: float) -> void:
 func _ready():
 	await get_tree().create_timer(5.0).timeout
 	queue_free()
+
+func _on_body_entered(body: Node) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(DMG)
+		queue_free()
+		print("Damage dealt!")

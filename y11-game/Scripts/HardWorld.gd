@@ -3,12 +3,7 @@ extends Node2D
 @export var POWERUP: PackedScene
 @export var spawn_bounds: Rect2
 
-var collected_count = 0
-@onready var label = $Label
 
-func increase_count():
-	collected_count += 1
-	label.text = "Collected: %d" % collected_count
 
 
 

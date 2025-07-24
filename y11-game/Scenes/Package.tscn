@@ -34,4 +34,4 @@ shape = SubResource("RectangleShape2D_gcxa2")
 scale = Vector2(0.0421217, 0.0490909)
 sprite_frames = SubResource("SpriteFrames_wfj6l")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
