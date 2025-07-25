@@ -1,23 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://k3284i1uov8k"]
 
+[ext_resource type="Script" uid="uid://dgmlmfbfc2dl0" path="res://Scenes/BigSpaceShip.gd" id="1_duvfx"]
 [ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="1_o5gdg"]
-
-[sub_resource type="GDScript" id="GDScript_o5gdg"]
-script/source = "extends Area2D
-var score = 5
-
-func _on_area_entered(area: Area2D) -> void:
-	$\"../../Label\".text = str(\"Packages needed to be delivered:\", score)
-	queue_free()
-	#if the player enters a specific area:
-		#score -= 1
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duvfx"]
 size = Vector2(121, 643)
 
 [node name="Big SpaceShip" type="Area2D"]
-script = SubResource("GDScript_o5gdg")
+script = ExtResource("1_duvfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 328.5)

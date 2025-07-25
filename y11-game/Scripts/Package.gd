@@ -1,7 +1,17 @@
 extends Area2D
-var score = 5
+var Pickedup = false
+var PickupZone = null
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":  # You can use groups or check for the correct node
-		var main = get_tree().get_root().get_node("Main")  # Adjust path as needed
-		queue_free()  # Remove the collectable
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		PickupZone = body
+	if Input.is_action_just_pressed("pickup"):
+		pick_up_item()
+
+func pick_up_item():
+	Pickedup = true
+	self.position = PickupZone.position
+	self.visible = false
