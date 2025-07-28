@@ -40,9 +40,12 @@ position = Vector2(549, 609)
 [node name="Package5" parent="Packages" instance=ExtResource("8_8iycb")]
 position = Vector2(28, 621)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 424.0
-offset_bottom = 93.0
-text = "Packages Needed to be Delivered: "
+[node name="TimerLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

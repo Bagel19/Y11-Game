@@ -1,22 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dda1ibr4ovexy"]
+[gd_scene load_steps=6 format=3 uid="uid://dda1ibr4ovexy"]
 
 [ext_resource type="Script" uid="uid://cnk0ynbimx0jn" path="res://Scripts/Bullet.gd" id="1_14k46"]
-[ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="2_14k46"]
+[ext_resource type="Texture2D" uid="uid://cmxkj5eel8e4q" path="res://Sprites/Bullet 6.png" id="2_14k46"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14k46"]
-size = Vector2(38, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_14k46"]
+atlas = ExtResource("2_14k46")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pypll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14k46")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvus8"]
+radius = 19.0263
 
 [node name="Bullet" type="Area2D" groups=["Projectiles"]]
 script = ExtResource("1_14k46")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_14k46")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.725, 1.925)
+sprite_frames = SubResource("SpriteFrames_pypll")
+autoplay = "default"
 
 [node name="KillTimer" type="Timer" parent="."]
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_14k46")
+visible = false
+shape = SubResource("CircleShape2D_qvus8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,26 +1,15 @@
 extends Node2D
 
-@export var POWERUP: PackedScene
-@export var spawn_bounds: Rect2
-
-
-
-
-
+var total_time := 120
+@onready var timer_label = $TimerLabel
+@onready var countdown_timer = $CountdownTimer
 
 func _ready():
-	randomize()
+	update_timer_label()
+	countdown_timer.start()
 
-func _on_Timer_timeout():
-	spawnHealth()
-
-func spawnHealth():
-	var chance = randi_range(0,1)
-	if chance == 0:
-		var powerup = POWERUP.instantiate()
-		var rand_x = randf_range(spawn_bounds.position.x, spawn_bounds.position.x + spawn_bounds.size.x)
-		var rand_y = randf_range(spawn_bounds.position.y, spawn_bounds.position.y + spawn_bounds.size.y)
-		powerup.global_position = Vector2(rand_x, rand_y)
-		get_tree().current_scene.add_child(powerup)
-	else:
-		pass
+func _on_countdown_timer_timeout() -> void:
+	total_time-= 1
+	update_timer_label()
+	
+	if total_time <= 0:
