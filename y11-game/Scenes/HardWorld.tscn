@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=7 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="2_btnk4"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="6_1mf72"]
 [ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="8_8iycb"]
 
 [node name="HardWorld" type="Node2D"]
@@ -40,12 +41,22 @@ position = Vector2(549, 609)
 [node name="Package5" parent="Packages" instance=ExtResource("8_8iycb")]
 position = Vector2(28, 621)
 
-[node name="TimerLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="CountdownTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("6_1mf72")
+theme_override_font_sizes/font_size = 48
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 1095.0
+offset_top = 3.0
+offset_right = 1145.0
+offset_bottom = 39.0
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]

@@ -15,12 +15,14 @@ var current_pattern_index = 0
 
 func _ready():
 	shoot_timer.wait_time = shooter_timer_wait_time
-	shoot_timer.timeout.connect(_on_shoot_timer_timeout)
+	if not shoot_timer.timeout.is_connected(_on_shoot_timer_timeout):
+		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 	shoot_timer.start()
 
 	pattern_timer.wait_time = 60
 	pattern_timer.one_shot = false
-	pattern_timer.timeout.connect(_on_pattern_timer_timeout)
+	if not pattern_timer.timeout.is_connected(_on_pattern_timer_timeout):
+		pattern_timer.timeout.connect(_on_pattern_timer_timeout)
 	pattern_timer.start()
 
 	setup_spawn_points()
