@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
 var MAXHP = 10
-var CURRENTHP = MAXHP
+var CURRENTHP := 0 
+
 var speed = 200
-var item: Node = null  # Item that the player is carrying
+
 @onready var progress_bar: ProgressBar = get_node_or_null("CanvasLayer/ProgressBar")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-signal health_changed(new_health)
+
+signal MAXHP_changed(new_value)
 
 func _ready():
-	# Initialize any necessary variables or nodes here
+	CURRENTHP = MAXHP
 	pass
 
 func _process(delta: float) -> void:
@@ -22,13 +24,15 @@ func _process(delta: float) -> void:
 
 func take_damage(amount = 1) -> void:
 	CURRENTHP -= amount
+	CURRENTHP = max(CURRENTHP, 0)
+	emit_signal("health_changed", CURRENTHP)
+	print("Player took damage. HP now:", CURRENTHP)
 	if CURRENTHP <= 0:
 		Lose()
 
-# Lose condition (when HP reaches 0)
 func Lose():
 	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
 
-func set_health(value):
+func set_MAXHP(value):
 	MAXHP = value
-	emit_signal("health_changed", MAXHP)
+	emit_signal("MAXHP_changed", MAXHP)
