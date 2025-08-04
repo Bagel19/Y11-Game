@@ -4,7 +4,7 @@ var DMG := 1
 @export var speed: float = 200.0 
 
 func _ready():
-	connect("body_entered", Callable(self, "_on_body_entered"))d
+	connect("body_entered", Callable(self, "_on_body_entered"))
 	await get_tree().create_timer(5.0).timeout
 	queue_free()
 

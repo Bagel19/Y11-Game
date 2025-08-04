@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var MAXHP = 10
 var CURRENTHP := 0 
-
+var held_item: Node = null
 var speed = 200
 
 @onready var progress_bar: ProgressBar = get_node_or_null("CanvasLayer/ProgressBar")

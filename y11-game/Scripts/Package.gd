@@ -1,17 +1,31 @@
 extends Area2D
-var Pickedup = false
-var PickupZone = null
+
+var picked_up = false
+var pickup_zone = null
 
 func _ready():
-	body_entered.connect(_on_body_entered)
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
+
+func _process(delta):
+	if pickup_zone and Input.is_action_just_pressed("PickUp") and not picked_up:
+		if pickup_zone.held_item == null:
+			pick_up_item()
+		else:
+			print("Player already holding something!")
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		PickupZone = body
-	if Input.is_action_just_pressed("pickup"):
-		pick_up_item()
+		pickup_zone = body
+
+func _on_body_exited(body):
+	if body == pickup_zone:
+		pickup_zone = null
 
 func pick_up_item():
-	Pickedup = true
-	self.position = PickupZone.position
+	picked_up = true
+	self.position = pickup_zone.position
 	self.visible = false
+	self.set_deferred("monitoring", false)
+	pickup_zone.held_item = self
+	print("Picked up:", self.name)

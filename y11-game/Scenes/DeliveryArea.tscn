@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b33xyxmkjrt8n"]
+
+[ext_resource type="Script" uid="uid://qadmpi4u6isg" path="res://Scripts/DeliveryArea.gd" id="1_e3vkl"]
+[ext_resource type="Texture2D" uid="uid://bpyhk0alx5xiv" path="res://icon.svg" id="2_nqc0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwco1"]
+
+[node name="DeliveryArea" type="Area2D"]
+script = ExtResource("1_e3vkl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lwco1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nqc0t")
