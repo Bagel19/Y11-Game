@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bejwty2a6alop"]
+[gd_scene load_steps=3 format=3 uid="uid://dkja6mb2t1wpg"]
 
-[ext_resource type="Script" uid="uid://boyrvpldja21s" path="res://Scripts/Win Screen.gd" id="1_d8xbi"]
-[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="2_fy21p"]
+[ext_resource type="Script" uid="uid://boyrvpldja21s" path="res://Scripts/Win Screen.gd" id="1_gilms"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="2_jdlj4"]
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_d8xbi")
+script = ExtResource("1_gilms")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -34,7 +34,7 @@ size_flags_vertical = 8
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_fy21p")
+theme_override_fonts/font = ExtResource("2_jdlj4")
 theme_override_font_sizes/font_size = 48
 text = "Restart?"
 
@@ -44,7 +44,7 @@ size_flags_vertical = 8
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_fy21p")
+theme_override_fonts/font = ExtResource("2_jdlj4")
 theme_override_font_sizes/font_size = 48
 text = "Exit"
 
@@ -54,10 +54,10 @@ offset_left = 419.0
 offset_top = 215.0
 offset_right = 739.0
 offset_bottom = 263.0
-theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
-theme_override_fonts/font = ExtResource("2_fy21p")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jdlj4")
 theme_override_font_sizes/font_size = 48
-text = "YOU WIN!"
+text = "YOU LOSE!!!"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Restart?" to="." method="_on_restart_pressed"]

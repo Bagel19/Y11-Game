@@ -35,3 +35,6 @@ func update_timer_label():
 func _on_MAXPHP_changed(new_health):
 	hp_label.text = "HP: %d" % new_health
 	print("New HP value:", new_health)
+
+func update_hp_label(current_hp, max_hp):
+	hp_label.text = "HP: %d / %d" % [current_hp, max_hp]

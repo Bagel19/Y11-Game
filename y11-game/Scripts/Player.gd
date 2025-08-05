@@ -7,6 +7,7 @@ var speed = 200
 
 @onready var progress_bar: ProgressBar = get_node_or_null("CanvasLayer/ProgressBar")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var HP = $"../CanvasLayer/HP"
 
 signal MAXHP_changed(new_value)
 
@@ -36,3 +37,12 @@ func Lose():
 func set_MAXHP(value):
 	MAXHP = value
 	emit_signal("MAXHP_changed", MAXHP)
+	
+func heal():
+	var amount = 2
+	CURRENTHP += amount
+	CURRENTHP = clamp(CURRENTHP, 0, MAXHP)
+	update_hp_label()
+
+func update_hp_label():
+	HP.text = "HP: %d / %d" % [CURRENTHP, MAXHP]
