@@ -4,7 +4,7 @@ var MAXHP = 10
 var CURRENTHP := 0 
 var held_item: Node = null
 var speed = 200
-
+@onready var Hint := get_node("/root/HardWorld/CanvasLayer/Hint")
 @onready var progress_bar: ProgressBar = get_node_or_null("CanvasLayer/ProgressBar")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var HP = $"../CanvasLayer/HP"

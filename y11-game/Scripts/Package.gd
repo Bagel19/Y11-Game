@@ -17,9 +17,14 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Player":
 		pickup_zone = body
+		if body.held_item == null:
+			body.Hint.text = "Press E to pick up"
+		else:
+			body.Hint.text = "You already have a package"
 
 func _on_body_exited(body):
 	if body == pickup_zone:
+		body.Hint.text = ""
 		pickup_zone = null
 
 func pick_up_item():
@@ -28,4 +33,5 @@ func pick_up_item():
 	self.visible = false
 	self.set_deferred("monitoring", false)
 	pickup_zone.held_item = self
+	pickup_zone.Hint.text = ""
 	print("Picked up:", self.name)

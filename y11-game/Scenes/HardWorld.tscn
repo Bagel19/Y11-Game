@@ -61,6 +61,14 @@ offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("6_1mf72")
 theme_override_font_sizes/font_size = 48
 
+[node name="Hint" type="Label" parent="CanvasLayer"]
+offset_left = 431.0
+offset_top = 128.0
+offset_right = 654.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("6_1mf72")
+theme_override_font_sizes/font_size = 48
+
 [node name="DeliveryArea" parent="." instance=ExtResource("7_cg65a")]
 position = Vector2(1082, 295)
 
