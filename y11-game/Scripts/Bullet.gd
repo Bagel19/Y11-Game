@@ -5,7 +5,7 @@ var DMG := 1
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(60.0).timeout
 	queue_free()
 
 func _process(delta: float) -> void:

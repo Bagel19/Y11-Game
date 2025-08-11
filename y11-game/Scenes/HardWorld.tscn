@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=9 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="2_btnk4"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_5ijq8"]
 [ext_resource type="PackedScene" uid="uid://cniuyrsjnl7cx" path="res://Scenes/HardEnemy.tscn" id="4_m6oth"]
 [ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="6_1mf72"]
+[ext_resource type="PackedScene" uid="uid://cg0niirmnw0ru" path="res://Scenes/Pause.tscn" id="6_8iycb"]
 [ext_resource type="PackedScene" uid="uid://b33xyxmkjrt8n" path="res://Scenes/DeliveryArea.tscn" id="7_cg65a"]
 [ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="8_8iycb"]
 
@@ -68,6 +69,8 @@ offset_right = 654.0
 offset_bottom = 176.0
 theme_override_fonts/font = ExtResource("6_1mf72")
 theme_override_font_sizes/font_size = 48
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("6_8iycb")]
 
 [node name="DeliveryArea" parent="." instance=ExtResource("7_cg65a")]
 position = Vector2(1082, 295)
