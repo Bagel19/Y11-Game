@@ -8,7 +8,7 @@ func resume():
 
 func pause():
 	get_tree().paused = true
-	$AnimationPlayer.play
+	$AnimationPlayer.play("Blur")
 
 func Esc():
 	if Input.is_action_just_pressed("Pause") and get_tree().paused == false:

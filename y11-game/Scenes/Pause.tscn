@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg0niirmnw0ru"]
+[gd_scene load_steps=8 format=3 uid="uid://cg0niirmnw0ru"]
 
 [ext_resource type="Script" uid="uid://d0xbt7p4oivy8" path="res://Scripts/Pause.gd" id="1_drk18"]
 [ext_resource type="Shader" uid="uid://dxuk55d3c4ehf" path="res://Scripts/Pause.gdshader" id="1_p8av3"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="3_kp87t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_drk18"]
 shader = ExtResource("1_p8av3")
@@ -87,15 +88,12 @@ offset_bottom = 647.0
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_top = -88.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -104,14 +102,29 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kp87t")
+theme_override_font_sizes/font_size = 48
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.678431, 0.847059, 0.901961, 1)
+theme_override_colors/font_color = Color(0.933333, 0.509804, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kp87t")
+theme_override_font_sizes/font_size = 48
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.933333, 0.509804, 0.933333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kp87t")
+theme_override_font_sizes/font_size = 48
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
