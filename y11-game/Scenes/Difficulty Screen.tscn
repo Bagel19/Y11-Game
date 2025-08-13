@@ -47,7 +47,19 @@ theme_override_fonts/font = ExtResource("2_b53vi")
 theme_override_font_sizes/font_size = 48
 text = "Hard Mode"
 
+[node name="Menu" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_b53vi")
+theme_override_font_sizes/font_size = 48
+text = "Menu?"
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Easy Mode" to="." method="_on_easy_mode_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Hard Mode" to="." method="_on_hard_mode_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Menu" to="." method="_on_hard_mode_pressed"]

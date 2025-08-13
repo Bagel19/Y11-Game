@@ -24,10 +24,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.5
-offset_top = -320.0
-offset_right = 160.5
-offset_bottom = 320.0
+offset_left = -141.0
+offset_top = -324.0
+offset_right = 180.0
+offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -48,19 +48,18 @@ position = Vector2(586, 368)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 495.0
-offset_right = 752.0
-offset_bottom = 648.0
+offset_left = 421.0
+offset_top = 449.0
+offset_right = 760.0
+offset_bottom = 602.0
 text = "W or ↑ = Up
 A or ← = Left
 S or ↓ = Down
 D or → = Right
-Blue Gems = Reduce Time
-Red Gems = Immunity for 1 Second"
+Esc or (hold down) Space to pause the game"
 horizontal_alignment = 1
 
 [node name="EasyEnemy" parent="." instance=ExtResource("3_yrknh")]
-position = Vector2(570, 198)
+position = Vector2(588, 194)
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
