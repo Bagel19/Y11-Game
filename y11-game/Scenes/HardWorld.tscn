@@ -12,38 +12,17 @@
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_btnk4")
-
 [node name="Player" parent="." instance=ExtResource("3_5ijq8")]
 position = Vector2(27, 26)
 
 [node name="HardEnemy" parent="." instance=ExtResource("4_m6oth")]
 position = Vector2(536, 63)
 
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
+[node name="CountdownTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Packages" type="Node" parent="."]
-
-[node name="Package" parent="Packages" instance=ExtResource("8_8iycb")]
-position = Vector2(319, 264)
-
-[node name="Package2" parent="Packages" instance=ExtResource("8_8iycb")]
-position = Vector2(901, 551)
-
-[node name="Package3" parent="Packages" instance=ExtResource("8_8iycb")]
-position = Vector2(882, 85)
-
-[node name="Package4" parent="Packages" instance=ExtResource("8_8iycb")]
-position = Vector2(549, 609)
-
-[node name="Package5" parent="Packages" instance=ExtResource("8_8iycb")]
-position = Vector2(28, 621)
-
-[node name="CountdownTimer" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -78,5 +57,28 @@ theme_override_font_sizes/font_size = 48
 [node name="DeliveryArea" parent="." instance=ExtResource("7_cg65a")]
 position = Vector2(1082, 295)
 
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[node name="Groups" type="Node" parent="."]
+
+[node name="Packages" type="Node" parent="Groups"]
+
+[node name="Package" parent="Groups/Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(319, 264)
+
+[node name="Package2" parent="Groups/Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(901, 551)
+
+[node name="Package3" parent="Groups/Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(882, 85)
+
+[node name="Package4" parent="Groups/Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(549, 609)
+
+[node name="Package5" parent="Groups/Packages" instance=ExtResource("8_8iycb")]
+position = Vector2(28, 621)
+
+[node name="GameManager" type="Node" parent="Groups"]
+unique_name_in_owner = true
+script = ExtResource("2_btnk4")
+
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

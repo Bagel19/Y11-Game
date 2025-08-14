@@ -1,13 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b80fbdgt3ikll"]
 
 [ext_resource type="Texture2D" uid="uid://mc6ayornr07i" path="res://Sprites/Powerrups.png" id="1_a12yu"]
-
-[sub_resource type="GDScript" id="GDScript_a12yu"]
-script/source = "extends Area2D
-@export var speed = 150
-#func _process(delta: float) -> void:
-	#translate(Vector2.*direction* * speed * delta)
-"
+[ext_resource type="Script" uid="uid://ddngc5jc5vvh2" path="res://Scripts/HealthUp.gd" id="1_at3t2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at3t2"]
 atlas = ExtResource("1_a12yu")
@@ -28,7 +22,7 @@ animations = [{
 radius = 11.0
 
 [node name="HealthUp" type="Area2D" groups=["HealthUp"]]
-script = SubResource("GDScript_a12yu")
+script = ExtResource("1_at3t2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cwt3i")
