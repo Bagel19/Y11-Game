@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://q2m4qy3tr4hp"]
+
+[ext_resource type="Script" uid="uid://5h0bss0eeyx4" path="res://Scripts/TimerDown.gd" id="1_timv2"]
+[ext_resource type="Texture2D" uid="uid://mc6ayornr07i" path="res://Sprites/Powerrups.png" id="1_xp4v7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_timv2"]
+atlas = ExtResource("1_xp4v7")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3qug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_timv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xx74"]
+radius = 14.0
+
+[node name="TimerDown" type="Area2D"]
+script = ExtResource("1_timv2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r3qug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_6xx74")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b80fbdgt3ikll"]
+[gd_scene load_steps=6 format=3 uid="uid://cts7e7281dhhw"]
 
 [ext_resource type="Texture2D" uid="uid://mc6ayornr07i" path="res://Sprites/Powerrups.png" id="1_a12yu"]
-[ext_resource type="Script" uid="uid://ddngc5jc5vvh2" path="res://Scripts/HealthUp.gd" id="1_at3t2"]
+[ext_resource type="Script" uid="uid://c0rl47jy3pcbe" path="res://Scripts/HealthUp.gd" id="1_at3t2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at3t2"]
 atlas = ExtResource("1_a12yu")
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f60t2"]
-radius = 11.0
+radius = 14.0357
 
 [node name="HealthUp" type="Area2D" groups=["HealthUp"]]
 script = ExtResource("1_at3t2")

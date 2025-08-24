@@ -43,8 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
-radius = 26.0
-height = 52.0
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3
@@ -61,6 +60,7 @@ autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_kyqiw")
 
 [node name="Area2D" type="Area2D" parent="."]

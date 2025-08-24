@@ -7,12 +7,13 @@ var speed = 200
 @onready var Hint := get_node("/root/HardWorld/CanvasLayer/Hint")
 @onready var progress_bar: ProgressBar = get_node_or_null("CanvasLayer/ProgressBar")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var HP = $"../CanvasLayer/HP"
+@onready var HP: Label = get_node("/root/HardWorld/CanvasLayer/HP")
 
 signal MAXHP_changed(new_value)
 
 func _ready():
 	CURRENTHP = MAXHP
+	update_hp_label()
 	pass
 
 func _process(delta: float) -> void:
@@ -39,10 +40,11 @@ func set_MAXHP(value):
 	emit_signal("MAXHP_changed", MAXHP)
 	
 func heal():
-	var amount = 2
+	var amount = 1
 	CURRENTHP += amount
 	CURRENTHP = clamp(CURRENTHP, 0, MAXHP)
 	update_hp_label()
 
 func update_hp_label():
-	HP.text = "HP: %d / %d" % [CURRENTHP, MAXHP]
+	HP.text = "HP: {0} / {1}".format([CURRENTHP, MAXHP])
+	print("Label updated ->", HP.text)
