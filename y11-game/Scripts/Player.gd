@@ -28,6 +28,7 @@ func take_damage(amount = 1) -> void:
 	CURRENTHP -= amount
 	CURRENTHP = max(CURRENTHP, 0)
 	emit_signal("health_changed", CURRENTHP)
+	update_hp_label()
 	print("Player took damage. HP now:", CURRENTHP)
 	if CURRENTHP <= 0:
 		Lose()
@@ -39,10 +40,8 @@ func set_MAXHP(value):
 	MAXHP = value
 	emit_signal("MAXHP_changed", MAXHP)
 	
-func heal():
-	var amount = 1
-	CURRENTHP += amount
-	CURRENTHP = clamp(CURRENTHP, 0, MAXHP)
+func heal(amount: int = 2):
+	CURRENTHP = clamp(CURRENTHP + amount, 0, MAXHP)
 	update_hp_label()
 
 func update_hp_label():

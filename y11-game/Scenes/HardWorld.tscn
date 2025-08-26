@@ -25,6 +25,10 @@ autostart = true
 wait_time = 5.0
 autostart = true
 
+[node name="HealthTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer"]
@@ -35,7 +39,7 @@ theme_override_fonts/font = ExtResource("6_1mf72")
 theme_override_font_sizes/font_size = 48
 
 [node name="HP" type="Label" parent="CanvasLayer"]
-offset_left = 1017.0
+offset_left = 898.0
 offset_top = 3.0
 offset_right = 1145.0
 offset_bottom = 51.0
@@ -82,3 +86,4 @@ script = ExtResource("2_btnk4")
 
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
