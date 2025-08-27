@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xx74"]
 radius = 14.0
 
-[node name="TimerDown" type="Area2D"]
+[node name="TimerDown" type="Area2D" groups=["PowerUp"]]
 script = ExtResource("1_timv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -30,3 +30,5 @@ sprite_frames = SubResource("SpriteFrames_r3qug")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_6xx74")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

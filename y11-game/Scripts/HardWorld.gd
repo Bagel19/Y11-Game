@@ -6,6 +6,10 @@ var total_time := 120
 @onready var countdown_timer = $CountdownTimer
 @onready var player = $Player
 @onready var hp_label = $CanvasLayer/HP
+@onready var PowerUps = [
+	preload("res://Scenes/HealthUp.tscn"),
+	preload("res://Scenes/TimerDown.tscn")
+]
 
 func _ready():
 	update_timer_label()
@@ -45,10 +49,19 @@ func _on_health_timer_timeout() -> void:
 	spawn_powerup()
 
 func spawn_powerup():
-	var x = randi_range(0, 1150)
-	var y = randi_range(0, 645)
+	var x = randi() % 1150
+	var y = randi() % 645
 	var pos = Vector2(x, y)
 	
-	var powerup = PowerUpScene.instantiate()
+	var random_index = randi() % PowerUps.size()
+	var powerup_scene = PowerUps[random_index]
+	
+	var powerup = powerup_scene.instantiate()
 	powerup.global_position = pos
 	add_child(powerup)
+
+func add_time(seconds: float) -> void:
+	if countdown_timer.is_stopped():
+		return
+	total_time += seconds
+	update_timer_label()
