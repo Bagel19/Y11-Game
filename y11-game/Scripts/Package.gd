@@ -34,4 +34,3 @@ func pick_up_item():
 	self.set_deferred("monitoring", false)
 	pickup_zone.held_item = self
 	pickup_zone.Hint.text = ""
-	print("Picked up:", self.name)

@@ -1,7 +1,10 @@
 extends Node2D
 
+var total_deliveries := 0
+var delivery_goal := 5
 var total_time := 120
 @onready var PowerUpScene = preload("res://Scenes/HealthUp.tscn")
+@onready var package_label = $CanvasLayer/Package
 @onready var timer_label = $CanvasLayer/TimerLabel
 @onready var countdown_timer = $CountdownTimer
 @onready var player = $Player
@@ -14,6 +17,7 @@ var total_time := 120
 func _ready():
 	update_timer_label()
 	countdown_timer.start()
+	update_package_label()
 
 	var handler = Callable(self, "_on_MAXHP_changed")
 
@@ -37,7 +41,7 @@ func update_timer_label():
 	var seconds = total_time % 60
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
 
-func _on_MAXPHP_changed(new_health):
+func _on_MAXdHP_changed(new_health):
 	hp_label.text = "HP: %d" % new_health
 	print("New HP value:", new_health)
 
@@ -65,3 +69,14 @@ func add_time(seconds: float) -> void:
 		return
 	total_time += seconds
 	update_timer_label()
+
+func add_delivery():
+	total_deliveries += 1
+	update_package_label()
+	
+	if total_deliveries >= delivery_goal:
+		print("All packages delivered!")
+		get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
+
+func update_package_label():
+	package_label.text = "Packages delivered: %d/%d" % [total_deliveries, delivery_goal]

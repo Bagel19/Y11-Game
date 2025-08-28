@@ -19,12 +19,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xx74"]
-radius = 14.0
+radius = 23.0217
 
 [node name="TimerDown" type="Area2D" groups=["PowerUp"]]
 script = ExtResource("1_timv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1.58929, 1.69643)
 sprite_frames = SubResource("SpriteFrames_r3qug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

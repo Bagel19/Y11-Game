@@ -31,6 +31,8 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("6_8iycb")]
+
 [node name="TimerLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 48.0
@@ -56,7 +58,12 @@ theme_override_colors/font_color = Color(0.831373, 0.380392, 0.65098, 1)
 theme_override_fonts/font = ExtResource("6_1mf72")
 theme_override_font_sizes/font_size = 48
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("6_8iycb")]
+[node name="Package" type="Label" parent="CanvasLayer"]
+offset_left = 454.0
+offset_top = 134.0
+offset_right = 637.0
+offset_bottom = 157.0
+text = "Packages Delivered: 0/5"
 
 [node name="DeliveryArea" parent="." instance=ExtResource("7_cg65a")]
 position = Vector2(1082, 295)
