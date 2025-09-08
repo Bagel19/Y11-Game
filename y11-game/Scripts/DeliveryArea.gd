@@ -10,9 +10,9 @@ func _on_body_entered(body):
 		body.held_item = null
 
 		# Show feedback
-		body.hint_label.text = "You delivered a package"
-		await get_tree().create_timer(2.0).timeout
-		body.hint_label.text = ""
+		#body.hint_label.text = "You delivered a package"
+		#await get_tree().create_timer(2.0).timeout
+		#body.hint_label.text = ""
 
 		# Update world counter
 		var world = get_tree().current_scene

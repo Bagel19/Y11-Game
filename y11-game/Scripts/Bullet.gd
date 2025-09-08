@@ -15,4 +15,3 @@ func _on_body_entered(body: Node) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(DMG)
 		queue_free()
-		print("Damage dealt!")

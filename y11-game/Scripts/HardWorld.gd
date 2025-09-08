@@ -53,8 +53,8 @@ func _on_health_timer_timeout() -> void:
 	spawn_powerup()
 
 func spawn_powerup():
-	var x = randi() % 1150
-	var y = randi() % 645
+	var x = randi_range(0, 1149)
+	var y = randi_range(125,645)
 	var pos = Vector2(x, y)
 	
 	var random_index = randi() % PowerUps.size()
