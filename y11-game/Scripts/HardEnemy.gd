@@ -8,7 +8,7 @@ var shooter_timer_wait_time = 0.2
 
 var patterns = [
 	{"spawn_point_count": 6, "radius": 100, "rotate_speed": 50},
-	{"spawn_point_count": 8, "radius": 100, "rotate_speed": 80},
+	{"spawn_point_count": 8, "radius": 100, "rotate_speed": 100},
 ]
 var current_pattern_index = 0
 

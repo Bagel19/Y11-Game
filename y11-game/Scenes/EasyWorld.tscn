@@ -1,14 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://bog8kl0pyc3gi"]
+[gd_scene load_steps=9 format=3 uid="uid://dxslej1l44x7o"]
 
-[ext_resource type="Script" uid="uid://c7posw36ald27" path="res://Scripts/Easy World.gd" id="1_f3gtj"]
+[ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_gjicl"]
 [ext_resource type="PackedScene" uid="uid://bq53or7jg7188" path="res://Scenes/Player.tscn" id="3_ed5sw"]
+[ext_resource type="PackedScene" uid="uid://cg0niirmnw0ru" path="res://Scenes/Pause.tscn" id="4_ybc66"]
 [ext_resource type="PackedScene" uid="uid://0nmuuiyry2ri" path="res://Scenes/EasyEnemy.tscn" id="4_yf3fs"]
+[ext_resource type="FontFile" uid="uid://cxh0tr6d5s1u5" path="res://Sprites/Fonts/OMORI_GAME2.ttf" id="5_l44nh"]
+[ext_resource type="PackedScene" uid="uid://b33xyxmkjrt8n" path="res://Scenes/DeliveryArea.tscn" id="6_haxoo"]
+[ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="7_5vhrv"]
+[ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="8_cdc2r"]
 
-[node name="EasyWorld" type="Node2D"]
-script = ExtResource("1_f3gtj")
+[node name="HardWorld" type="Node2D"]
+script = ExtResource("1_gjicl")
 
 [node name="Player" parent="." instance=ExtResource("3_ed5sw")]
-position = Vector2(32, 358)
+position = Vector2(27, 26)
 
 [node name="EasyEnemy" parent="." instance=ExtResource("4_yf3fs")]
-position = Vector2(565, 65)
+position = Vector2(556, 64)
+
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="HealthTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("4_ybc66")]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_l44nh")
+theme_override_font_sizes/font_size = 48
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 898.0
+offset_top = 3.0
+offset_right = 1145.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_l44nh")
+theme_override_font_sizes/font_size = 48
+
+[node name="Hint" type="Label" parent="CanvasLayer"]
+offset_left = 446.0
+offset_top = 162.0
+offset_right = 669.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_l44nh")
+theme_override_font_sizes/font_size = 48
+
+[node name="Package" type="Label" parent="CanvasLayer"]
+offset_left = 454.0
+offset_top = 134.0
+offset_right = 637.0
+offset_bottom = 157.0
+text = "Packages Delivered: 0/5"
+
+[node name="DeliveryArea" parent="." instance=ExtResource("6_haxoo")]
+position = Vector2(1082, 295)
+
+[node name="Groups" type="Node" parent="."]
+
+[node name="Packages" type="Node" parent="Groups"]
+
+[node name="Package" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
+position = Vector2(319, 264)
+
+[node name="Package2" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
+position = Vector2(901, 551)
+
+[node name="Package3" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
+position = Vector2(882, 85)
+
+[node name="Package4" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
+position = Vector2(549, 609)
+
+[node name="Package5" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
+position = Vector2(28, 621)
+
+[node name="GameManager" type="Node" parent="Groups"]
+unique_name_in_owner = true
+script = ExtResource("8_cdc2r")
+
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
