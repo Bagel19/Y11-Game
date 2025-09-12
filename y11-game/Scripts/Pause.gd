@@ -30,5 +30,5 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Difficulty Screen.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Esc()

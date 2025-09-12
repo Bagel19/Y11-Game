@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0l8sle2sir4k"]
+[gd_scene load_steps=10 format=3 uid="uid://d0l8sle2sir4k"]
 
 [ext_resource type="Script" uid="uid://b4sthcc2e8o22" path="res://Scripts/HardWorld.gd" id="1_d24jh"]
 [ext_resource type="Script" uid="uid://cc4kyo3u7tn6y" path="res://Scripts/GameManager.gd" id="2_btnk4"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cg0niirmnw0ru" path="res://Scenes/Pause.tscn" id="6_8iycb"]
 [ext_resource type="PackedScene" uid="uid://b33xyxmkjrt8n" path="res://Scenes/DeliveryArea.tscn" id="7_cg65a"]
 [ext_resource type="PackedScene" uid="uid://bv8aj2d84wkmf" path="res://Scenes/Package.tscn" id="8_8iycb"]
+[ext_resource type="AudioStream" uid="uid://cxr6at5anw4so" path="res://Sprites/Music/8-Bit/Night of Knights.mp3" id="9_btnk4"]
 
 [node name="HardWorld" type="Node2D"]
 script = ExtResource("1_d24jh")
@@ -90,6 +91,10 @@ position = Vector2(28, 621)
 [node name="GameManager" type="Node" parent="Groups"]
 unique_name_in_owner = true
 script = ExtResource("2_btnk4")
+
+[node name="NightOfKnights" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_btnk4")
+autoplay = true
 
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

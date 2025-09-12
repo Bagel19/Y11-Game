@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var hint_label = $CanvasLayer/HintLabel
+@onready var hint_label = $"../CanvasLayer/Hint"
 var MAXHP: int = 10
 var CURRENTHP: int = MAXHP
 var held_item: Node = null
@@ -12,7 +12,7 @@ var speed: int = 200
 signal max_hp_changed(new_value)
 signal health_changed(current_hp)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var move_dir := Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = move_dir * speed if move_dir != Vector2.ZERO else Vector2.ZERO
 	move_and_slide()

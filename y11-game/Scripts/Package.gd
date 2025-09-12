@@ -7,7 +7,7 @@ func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
 
-func _process(delta):
+func _process(_delta):
 	if pickup_zone and Input.is_action_just_pressed("PickUp") and not picked_up:
 		if pickup_zone.held_item == null:
 			pick_up_item()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vtqxondoe34v"
+path="res://.godot/imported/2. Satellite Interruption.wav-b647706042cc2ad12dc55e513b5014c8.sample"
+
+[deps]
+
+source_file="res://Sprites/Music/Space Journey/2. Satellite Interruption.wav"
+dest_files=["res://.godot/imported/2. Satellite Interruption.wav-b647706042cc2ad12dc55e513b5014c8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
