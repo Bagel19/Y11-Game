@@ -36,7 +36,7 @@ theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_fy21p")
 theme_override_font_sizes/font_size = 48
-text = "Restart?"
+text = "Redo the Level"
 
 [node name="Exit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -46,18 +46,18 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_fy21p")
 theme_override_font_sizes/font_size = 48
-text = "Exit"
+text = "Exit To The Menu Screen"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 419.0
-offset_top = 215.0
-offset_right = 739.0
-offset_bottom = 263.0
+offset_left = 225.0
+offset_top = 220.0
+offset_right = 955.0
+offset_bottom = 268.0
 theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
 theme_override_fonts/font = ExtResource("2_fy21p")
 theme_override_font_sizes/font_size = 48
-text = "YOU WIN!"
+text = "You Beat The Level! Wanna Have Another Go?"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Restart?" to="." method="_on_restart_pressed"]
