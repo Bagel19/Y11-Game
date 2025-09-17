@@ -14,7 +14,7 @@
 script = ExtResource("1_gjicl")
 
 [node name="Player" parent="." instance=ExtResource("3_ed5sw")]
-position = Vector2(27, 26)
+position = Vector2(968, 538)
 
 [node name="EasyEnemy" parent="." instance=ExtResource("4_yf3fs")]
 position = Vector2(556, 64)
@@ -33,6 +33,7 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("4_ybc66")]
+visible = false
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -74,19 +75,19 @@ position = Vector2(1082, 295)
 [node name="Packages" type="Node" parent="Groups"]
 
 [node name="Package" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
-position = Vector2(319, 264)
+position = Vector2(150, 577)
 
 [node name="Package2" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
-position = Vector2(901, 551)
+position = Vector2(397, 372)
 
 [node name="Package3" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
-position = Vector2(882, 85)
+position = Vector2(854, 218)
 
 [node name="Package4" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
-position = Vector2(549, 609)
+position = Vector2(735, 525)
 
 [node name="Package5" parent="Groups/Packages" instance=ExtResource("7_5vhrv")]
-position = Vector2(28, 621)
+position = Vector2(56, 276)
 
 [node name="GameManager" type="Node" parent="Groups"]
 unique_name_in_owner = true
