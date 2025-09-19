@@ -25,7 +25,12 @@ func take_damage(amount: int = 1) -> void:
 		Lose()
 
 func Lose():
-	get_tree().change_scene_to_file("res://Scenes/LoseScreen.tscn")
+	if CURRENTHP <= 0:
+		var current_scene = get_tree().current_scene.scene_file_path
+		if current_scene == "res://Scenes/HardWorld.tscn":
+			get_tree().change_scene_to_file("res://Scenes/LoseScreenHard.tscn")
+		elif current_scene == "res://Scenes/EasyWorld.tscn":
+			get_tree().change_scene_to_file("res://Scenes/LoseScreenEasy.tscn")
 
 func set_MAXHP(value: int):
 	MAXHP = value

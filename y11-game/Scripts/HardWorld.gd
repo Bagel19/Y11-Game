@@ -37,7 +37,7 @@ func _on_countdown_timer_timeout() -> void:
 	if total_time <= 0:
 		countdown_timer.stop()
 		timer_label.text = "Time is Up!"
-		get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/LoseScreenHard.tscn")
 
 func update_timer_label():
 	var minutes = total_time / 60
@@ -87,8 +87,7 @@ func add_delivery():
 	update_package_label()
 	
 	if total_deliveries >= delivery_goal:
-		print("All packages delivered!")
-		get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/WinScreenHard.tscn")
 
 func update_package_label():
 	package_label.text = "Packages delivered: %d/%d" % [total_deliveries, delivery_goal]
